@@ -24,6 +24,7 @@ def myMethod(datos: List[Double]): Double = {
   Math.sqrt(sumaCuadrados / datos.size)
 }
 myMethod(datos)
+//NO SE HIZO NINGUN CAMBIO, SOLO SE VERIFICO CON CHATPGT
 
 //Pregunta 2
 //Transformación de calificaciones
@@ -46,6 +47,8 @@ def transformarCalificaciones(califs: List[Double], politica: Double => Double):
 transformarCalificaciones(calificaciones, redondear)
 transformarCalificaciones(calificaciones, bonificar)
 transformarCalificaciones(calificaciones, disminuirAltas)
+//NO SE HIZO NINGUN CAMBIO, SOLO SE VERIFICO CON CHATPGT
+
 //Pregunta 3
 //Transforme la función anónima a una función con nombre
 //val generadorSaludoAnonimo: String => (String => String) =
@@ -56,3 +59,4 @@ def generadorSalud(fraseBase: String): String => String = {
   (nombre: String) => s"$fraseBase, $nombre!"
 }
 generadorSalud("Hola")("Luis")
+//NO SE HIZO NINGUN CAMBIO, SOLO SE VERIFICO CON CHATPGT
