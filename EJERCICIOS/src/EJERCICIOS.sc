@@ -45,7 +45,7 @@ def disminuirAltas: Double => Double  = c => if (c > 8.0) c - 1.0 else c
 def transformarCalificaciones(califs: List[Double], politica: Double => Double): List[Double] = califs.map(politica)
 transformarCalificaciones(calificaciones, redondear)
 transformarCalificaciones(calificaciones, bonificar)
-transformarCalificaciones(calificaciones, disminuirAltas)x
+transformarCalificaciones(calificaciones, disminuirAltas)
 //Pregunta 3
 //Transforme la función anónima a una función con nombre
 //val generadorSaludoAnonimo: String => (String => String) =
