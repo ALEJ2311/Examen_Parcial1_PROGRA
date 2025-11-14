@@ -36,6 +36,7 @@ myMethod(datos)
 // de manera que dicha función pueda reutilizarse con diferentes políticas. La función deberá
 // producir una nueva lista con las calificaciones ya transformadas según la política que se
 // envíe al momento de usarla.
+//Version 1
 val calificacicones: List[Double] = List(6.5, 7.8, 9.2, 8.4, 5.9)
 def transformCalifi(p : String):List[Double] => List[Double] = {
   p match {
@@ -45,7 +46,18 @@ def transformCalifi(p : String):List[Double] => List[Double] = {
     case _ => (calificaciones: List[Double]) => calificaciones
   }
 }
-transformCalifi("")(calificacicones)
+transformCalifi("redondear")(calificacicones)
+
+//Version 2
+val calificaciones: List[Double] = List(6.5, 7.8, 9.2, 8.4, 5.9)
+
+val redondear: Double => Double = _.round.toDouble
+val bonificar: Double => Double = _ + 1.0
+val disminuirAltas: Double => Double  = c => if (c > 8.0) c - 1.0 else c
+def transformarCalificaciones(califs: List[Double], politica: Double => Double): List[Double] = califs.map(politica)
+transformarCalificaciones(calificaciones, redondear)
+transformarCalificaciones(calificaciones, bonificar)
+transformarCalificaciones(calificaciones, disminuirAltas)
 //Pregunta 3
 //Transforme la función anónima a una función con nombre
 //val generadorSaludoAnonimo: String => (String => String) =
